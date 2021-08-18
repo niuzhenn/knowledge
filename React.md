@@ -16,7 +16,17 @@
 > 2. componentDidUnmount
 
 React的生命周期在V16.4以后做了更改，主要是以下的变更
-> 1. getDerivedStateFromProps：
-> 2. getSnapshotBeforeUpdate：
+> 1. getDerivedStateFromProps：参数为props和state，在加载和更新阶段都会调用，返回一个对象来更新状态，或者返回null表示不需要更新
+> 2. getSnapshotBeforeUpdate：render之后，渲染完成之前调用，此生命周期返回的任何值都将作为参数传递给componentDidUpdate
+> 3. UNSAFE_componentWillMount
+> 4. UNSAFE_componentWillReceiveProps
+> 5. UNSAFE_componentWillUpdate
 
 # React的setState是同步还是异步的
+1. React控制的事件处理程序，以及生命周期函数调用setState为异步更新
+2. React控制之外的事件中调用setState是同步更新的，比如原生js绑定的事件，setTimeout/setInterval等
+如何控制同步还是异步？
+在setState函数中会根据一个变量isBatchingUpdates来确定是同步还是异步，isBatchingUpdates变量默认是false，表示同步更新，另外有一个batchingUpdates函数，在该函数中会把isBatchingUpdates修改为true，在React调用事件处理函数之前会先调用batchingUpdates，把isBatchingUpdates修改为true，则setState就为异步更新
+
+# React虚拟DOM
+
