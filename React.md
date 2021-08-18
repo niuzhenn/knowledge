@@ -1,3 +1,5 @@
+# React的优点，和vue比较有什么不同
+
 # React的生命周期
 组件加载阶段
 > 1. componentWillMount：组件加载时执行，整个生命周期只执行一次，可以在此时setState
@@ -32,3 +34,19 @@ React的生命周期在V16.4以后做了更改，主要是以下的变更
 
 # React虚拟DOM
 
+# diff算法
+
+# 类组件和函数式组件
+
+# 受控组件和非受控组件
+
+# 高阶组件
+
+# hooks
+
+# React Fiber
+
+
+# React-Redux
+
+# React-Router
