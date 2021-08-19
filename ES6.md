@@ -6,9 +6,18 @@ Javascript中的数据类型分为：
 # 数据类型判断方法
 1. instanceof
 2. typeof
-3. Object.prototype.toString()
+3. Object.prototype.toString.call()
 
 # 深拷贝和浅拷贝的区别
+浅拷贝只复制一层对象的属性,深拷贝递归复制对象的所有层级的属性
+
+# new操作符都干了什么
+1. 创建一个新的对象
+2. 将构造函数的作用域赋给新对象
+3. 执行构造函数中的代码
+4. 返回新对象
+
+# prototype和__proto__
 
 
 # 箭头函数
@@ -19,4 +28,16 @@ Javascript中的数据类型分为：
 5. 箭头函数没有prototype属性
 6. 箭头函数没有generator
 
-# Promise
+# Promise, async await
+
+
+# Eventloop
+
+# 节流, 防抖
+
+# 匿名自执行函数
+
+# js的作用域
+
+# call, apply, bind
+
