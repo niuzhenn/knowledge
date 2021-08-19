@@ -73,4 +73,7 @@ js中的任务分为宏任务和微任务
 2. 全局作用域
 
 # call, apply, bind
-
+都是更改this指向
+1. call: 具有多个参数
+2. apply: 具有2个参数,第二个参数是array
+3. bind: 只改变this指向,不直接执行函数
