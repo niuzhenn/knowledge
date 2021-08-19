@@ -44,7 +44,7 @@ React的生命周期在V16.4以后做了更改，主要是以下的变更
 
 # hooks
 1. useState
-2. useEffect
+2. useEffect：执行又副作用的代码，第二个参数是一个Array，为函数执行条件，useEffect可以返回一个清除函数，这个函数可以在组件卸载之前运行，也是在每次渲染时清除上一个effect
 3. userReducer
 4. userContext
 5. useMemo
