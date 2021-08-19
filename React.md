@@ -45,9 +45,13 @@ React 分别对 tree diff、component diff 以及 element diff 进行算法优�
 1. tree diff
 > DOM 节点跨层级的移动操作少到可以忽略不计
 > 只对同一层级的节点进行比较，如果节点相同，则更新props，如果不同，则卸载旧节点，加载新节点
-3. component diff
-4. element diff
-
+2. component diff
+> 如果是同一类型的组件，按照原策略继续比较
+> 如果是不同类型的组件，则直接卸载旧组件，加载新组件
+> 通过shouldComponentUpdate来判断是否需要进行diff
+3. element diff
+> 同一层级的节点，diff分为三种操作：插入，删除，删除
+> 遍历key，如果key相同，无需删除或插入，如果位置有变更，只移动节点，如果位置没变动，只更新节点
 
 # 类组件和函数式组件
 
@@ -64,7 +68,6 @@ React 分别对 tree diff、component diff 以及 element diff 进行算法优�
 6. useCallback
 
 # React Fiber
-
 
 # React-Redux
 
