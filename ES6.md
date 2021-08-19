@@ -36,8 +36,25 @@ Javascript中的数据类型分为：
 # 节流, 防抖
 
 # 匿名自执行函数
+```
+(function() {
+  // ...somecode
+}());
+
+!function() {
+  // ...somecode
+}();
+
++function() {
+  // ...somecode
+}();
+```
+> 核心: 使函数声明变成函数表达式
+> 作用: 创建一个独立的作用域,防止变量弥散全局,多用于各种js库
 
 # js的作用域
+1. 局部作用域
+2. 全局作用域
 
 # call, apply, bind
 
