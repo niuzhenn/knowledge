@@ -32,6 +32,20 @@ Javascript中的数据类型分为：
 
 
 # Eventloop
+Javascript是一个单线程语言,因此在遇到io等操作时,需要进行异步处理
+在js中存在一个调用栈,所有任务都会被放在调用栈里等待执行,同步任务被放在调用栈内执行,异步任务等任务有结果了以后,将回调函数放在任务队列里,当调用栈被清空后,会从任务队列里读取任务放入到调用站内执行
+
+### 宏任务和微任务
+js中的任务分为宏任务和微任务
+> 宏任务: setTimeout,setInterval,IO,UI rendering,request Animation Frame
+> 微任务: Promise, Object.observe
+> 微任务的执行在宏任务之前
+
+因此,eventloop的执行顺序如下:
+1. 同步任务被放入调用栈执行
+2. 调用栈清空
+3. 执行所有微任务
+4. 执行一个宏任务
 
 # 节流, 防抖
 
