@@ -33,8 +33,21 @@ React的生命周期在V16.4以后做了更改，主要是以下的变更
 在setState函数中会根据一个变量isBatchingUpdates来确定是同步还是异步，isBatchingUpdates变量默认是false，表示同步更新，另外有一个batchingUpdates函数，在该函数中会把isBatchingUpdates修改为true，在React调用事件处理函数之前会先调用batchingUpdates，把isBatchingUpdates修改为true，则setState就为异步更新
 
 # React虚拟DOM
+virtul DOM 也就是虚拟节点。通过JS的Object对象模拟DOM中的真实节点对象，再通过特定的render方法将其渲染成真实的DOM节点。
+
+虚拟DOM可以看做一棵模拟了DOM树的JavaScript对象树
+
+在传统的 Web 应用中，我们往往会把数据的变化实时地更新到用户界面中，于是每次数据的微小变动都会引起 DOM 树的重新渲染。
+虚拟DOM的目的是将所有操作累加起来，统计计算出所有的变化后，统一更新一次DOM。
 
 # diff算法
+React 分别对 tree diff、component diff 以及 element diff 进行算法优化。
+1. tree diff
+> DOM 节点跨层级的移动操作少到可以忽略不计
+> 只对同一层级的节点进行比较，如果节点相同，则更新props，如果不同，则卸载旧节点，加载新节点
+3. component diff
+4. element diff
+
 
 # 类组件和函数式组件
 
