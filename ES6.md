@@ -1,3 +1,8 @@
+# 数据类型
+Javascript中的数据类型分为：
+> 1. 基本数据类型：string，number，boolean，null，undefined，symbol，bigint
+> 2. 引用数据类型： object
+
 # 箭头函数
 1. 箭头函数的没有this，只能从作用域链继承this
 2. 箭头函数不能作为构造函数
