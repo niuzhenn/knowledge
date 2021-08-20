@@ -29,7 +29,13 @@ Javascript中的数据类型分为：
 6. 箭头函数没有generator
 
 # Promise, async await
+Promise三种状态： pending, fulfilled, reject
 
+Promise.race
+Promise.all
+
+async await
+基于generator实现，返回promise
 
 # Eventloop
 Javascript是一个单线程语言,因此在遇到io等操作时,需要进行异步处理
