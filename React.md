@@ -80,5 +80,7 @@ React 分别对 tree diff、component diff 以及 element diff 进行算法优�
 # React Fiber
 
 # React-Redux
+redux三大部分
 
 # React-Router
+懒加载
