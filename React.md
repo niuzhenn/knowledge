@@ -116,4 +116,11 @@ mapStateToProps：建立一个从（外部的）state对象到（UI 组件的）
 mapDispatchToProps：定义了可以派发action的操作
 
 # React-Router
-懒加载
+browserHistory和hashHistory
+> browserHistory：使用浏览器中的 History API 用于处理 
+> hashHistory
+
+路由懒加载
+使用React.lazy函数，异步导入组件，再包裹在Suspense内，当路由命中该组件时，才会对该组件进行加载
+
+
