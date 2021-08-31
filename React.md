@@ -89,7 +89,7 @@ React 分别对 tree diff、component diff 以及 element diff 进行算法优�
 5. useMemo：返回包含函数的结果，并将结果缓存起来，只有当依赖有改变时，才会再次执行useMemo中的代码，返回新的结果
 6. useCallback：返回被useCallback包含的函数，并将缓存此函数，只有当依赖参数有改变时，useCallback才会返回一个新的函数
 > React.memo()
-> 使用React.memo对组件进行包装，
+> 使用React.memo对组件进行包装，当依赖没有改变时，组件不会重新渲染
 
 
 # React Fiber
