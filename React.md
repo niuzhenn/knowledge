@@ -82,7 +82,25 @@ React 分别对 tree diff、component diff 以及 element diff 进行算法优�
 # React Fiber
 
 # React-Redux
-redux三大部分
+store
+> 存储数据
+> 包含方法：dispatch（），getStore（），describe（），unsubscribe（）
+
+reducer
+> 纯函数
+> 两个参数：旧的state和action，返回一个新的state
+
+action
+> 数据更新从action出发，通过dispatch派发action，action通知reducer发生了什么事件
+
+Provider和connect
+Provider：提供包含store的context
+connect：连接store和组件
+
+combinReducers：合并多个reducer
+
+mapStateToProps：建立一个从（外部的）state对象到（UI 组件的）props对象的映射关系。
+mapDispatchToProps：定义了可以派发action的操作
 
 # React-Router
 懒加载
