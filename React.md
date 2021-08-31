@@ -84,7 +84,7 @@ React 分别对 tree diff、component diff 以及 element diff 进行算法优�
 # React-Redux
 store
 > 存储数据
-> 包含方法：dispatch（），getStore（），describe（），unsubscribe（）
+> 包含方法：dispatch（），getStore（），describe（）
 
 reducer
 > 纯函数
