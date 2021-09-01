@@ -38,7 +38,15 @@ React的生命周期在V16.4以后做了更改，主要是以下的变更
 
 在setState函数中会根据一个变量isBatchingUpdates来确定是同步还是异步，isBatchingUpdates变量默认是false，表示同步更新，另外有一个batchingUpdates函数，在该函数中会把isBatchingUpdates修改为true，在React调用事件处理函数之前会先调用batchingUpdates，把isBatchingUpdates修改为true，则setState就为异步更新
 
-# React的传值方式
+# React组件之间的通信方式
+1. 父子组件的通信  
+父组件向子组件传值使用props，子组件向父组件通信可以在props中添加回调函数，子组件使用回调函数向父组件传值
+2. 跨层级组件通信  
+可以通过props一层一层向下传递，但是每层组件都需要写需要传递的值，嵌套太深组件间耦合太严重  
+通过context进行通信,使用React.createContext创建一个容器，在数据生产的地方增加一个Provider，在数据消费的地方增加一个Consumer，可跨层级进行数据传递
+3. 没有明显关系的组件通信
+通过订阅发布模式，在数据消费端添加监听函数，在数据生产端触发监听函数  
+通过redux进行数据传递
 
 # React虚拟DOM
 virtul DOM 也就是虚拟节点。通过JS的Object对象模拟DOM中的真实节点对象，再通过特定的render方法将其渲染成真实的DOM节点。
