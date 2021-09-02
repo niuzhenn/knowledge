@@ -1,4 +1,18 @@
 # BFC
+BFC的全称是Block Formatting Context，块级格式化上下文，是一个独立的渲染区域。
+BFC会有以下特性：
+1. 同属一个BFC的上下相邻元素，会发生margin重叠，即两个元素之间的距离由较大的margin决定
+2. 计算bfc的高度，浮动元素也参与计算
+3. bfc区域不会与浮动元素重叠
+4. 每个盒子（块盒与行盒）的margin box的左边，与包含块border box的左边相接触(对于从左往右的格式化，否则相反)。即使存在浮动也是如此
+5. BFC就是页面上的一个隔离的独立容器，容器里面的子元素不会影响到外面的元素。反之也如此。
+
+如何生成BFC元素
+1. 根元素
+2. position属性为absolute, fixed
+3. float属性不为none
+4. overflow不为visible,
+5. display为inline-block, table-cell, table-caption, flex, inline-flex
 
 # 上下左右居中
 1. 使用绝对定位
