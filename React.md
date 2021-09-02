@@ -105,6 +105,9 @@ React 分别对 tree diff、component diff 以及 element diff 进行算法优�
 
 
 # React Fiber
+之前React的算法，在开始计算dom树之后，整个过程为递归执行，同步执行，无法被打断，如果整个dom树非常大，就会导致页面渲染卡顿，对于用户体验不太友好
+
+
 
 # React-Redux
 React-redux主要解决组件内数据共享问题，对数据进行集中管理，单向数据流
