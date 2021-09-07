@@ -1,3 +1,8 @@
+# React单向数据流
+react单向数据流是指数据只能从父组件向子组件传递，并且对于子组件来说，props为只读属性，不可更改
+数据的流向只能通过props由外层到内层 一层一层往里传递
+单向数据流是react规范的数据流向,它的作用是极大的降低了我们组件间通信的代码耦合，让组件间的通信更为清晰
+
 # React的优点，和vue比较有什么不同
 1. 通过vdom和diff算法，提高渲染性能
 2. 解决了跨浏览器的问题
@@ -29,6 +34,15 @@ React的生命周期在V16.4以后做了更改，主要是以下的变更
 > 3. UNSAFE_componentWillMount
 > 4. UNSAFE_componentWillReceiveProps
 > 5. UNSAFE_componentWillUpdate
+
+# 避免react重复渲染
+props或state改变会触发组件重新渲染（栈内存中的值改变，或者堆内存的指针改变）
+1. shouldComponentUpdate
+2. React.memo
+3. useMemo
+4. useCallback
+5. getDerivedStateFromProps
+
 
 # React的setState是同步还是异步的
 1. React控制的事件处理程序，以及生命周期函数调用setState为异步更新
