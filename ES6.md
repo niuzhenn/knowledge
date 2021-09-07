@@ -86,9 +86,8 @@ js中的任务分为宏任务和微任务
 
 # javascript继承的方式
 ```
-function Person(name, age) {
+function Person(name) {
   this.name = name;
-  this.age = age;
 }
 
 Person.prototype.say = function() {
@@ -102,7 +101,7 @@ Man.prototype = new Person('sam');
 const man = new Man();
 man.say();
 ```
-3. 构造继承
+2. 构造继承
 ```
 function Man() {
   Person.apply(this, arugments)
@@ -110,17 +109,27 @@ function Man() {
 const man = new Man('sam');
 sam.sau(); // 报错
 ```
-5. 组合继承
+3. 组合继承
 ```
 function Man() {
   Person.apply(this, arguments);
 }
-Man.prototype = new Person();
+Man.prototype = new Person('sam');
 
 ```
-7. 原型式继承
-8. 寄生继承
-9. 寄生组合继承
+4. 原型式继承
+```
+function content(obj) {
+  function Temp() {};
+  Temp.prototype = obj;
+  return new Temp();
+}
+const man = content(new Person());
+```
+5. 寄生继承
+
+
+6. 寄生组合继承
 ```
 function Man() {
   Person.apply(this, arguments);
