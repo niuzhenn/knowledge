@@ -1,3 +1,7 @@
+# 闭包
+闭包是指能访问到另一个函数作用域内的变量的函数
+用处：1. 柯里化； 2. 模块化
+
 # 数据类型
 Javascript中的数据类型分为：
 > 1. 基本数据类型：string，number，boolean，null，undefined，symbol，bigint，基本数据类型存在栈内存中
@@ -13,12 +17,14 @@ Javascript中的数据类型分为：
 
 # new操作符都干了什么
 1. 创建一个新的对象
-2. 将构造函数的作用域赋给新对象
-3. 执行构造函数中的代码
+2. 把新对象的__proto__指向构造函数的prototype
+3. 把构造函数的this指向新对象并执行
 4. 返回新对象
 
 # prototype和__proto__
-
+prototype：函数特有，指向函数的原型对象
+__proto__：每个对象都有的属性，指向对象的原型
+construtor：每个原型
 
 # 箭头函数
 1. 箭头函数的没有this，只能从作用域链继承this
