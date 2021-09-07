@@ -72,3 +72,13 @@ align-self: auto(默认)|flex-start|flex-end|center|baseline|stretch
 ie盒模型则是指content+padding+border的整体宽度
 
 通过box-sizing可以统一盒模型的展示（content, border-box）
+
+# 选择器权重
+内联样式：1000
+id选择器：0100
+类选择器，伪类选择器，属性选择器：0010
+标签选择器，伪元素选择器：0001
+子选择器，相邻选择器：0000
+继承：无
+
+!important：最优先
