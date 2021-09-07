@@ -115,7 +115,6 @@ sam.sau(); // 报错
 function Man() {
   Person.apply(this, arguments);
 }
-
 Man.prototype = new Person();
 
 ```
@@ -126,11 +125,10 @@ Man.prototype = new Person();
 function Man() {
   Person.apply(this, arguments);
 }
-
 Man.prototype = Object.create(Person.prototype);
 Man.prototype.construtor = Man;
-const man = new Man('')
-
+const man = new Man('sam');
+const women = new Man('lily');
 ```
 11. class继承
 
