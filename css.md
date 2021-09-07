@@ -29,6 +29,29 @@ align-items: center;
 justify-content: center;
 ```
 
+# flex布局
+```
+display: flex;
+```
+容器属性
+```
+flex-direction: row|column|row-reverse|column-reverse
+flex-wrap: no-wrap|wrap|wrap-reverse
+flex-flow: flex-direction和flex-wrap简写集合
+justify-content: flex-start|flex-end|space-between|space-round|space-evenly|center
+align-items: stretch|center|flex-start|flex-end|baseline
+align-content: flex-start|flex-end|center|space-between|space-around|space-evenly|stretch
+```
+项目属性
+```
+order:
+flex-grow: 默认0|项目在有剩余空间的情况下是否放大
+flex-shrink: 默认1|项目在空间不足时是否缩小
+flex-basis: 项目宽度
+flex: 默认0 1 auto|flex-grow，flex-shrink与flex-basis集合
+align-self: auto(默认)|flex-start|flex-end|center|baseline|stretch
+```
+
 # 重绘，重排
 1. 元素的宽高，位置，隐藏等会引起页面布局发生变化的属性变动时，浏览器需要重新计算元素的位置，就会发生重绘
 2. 元素的颜色，透明度等不会导致页面布局发生变化，则浏览器会进行重绘
