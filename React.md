@@ -155,6 +155,12 @@ React 分别对 tree diff、component diff 以及 element diff 进行算法优�
 
 # React-Redux
 React-redux主要解决组件内数据共享问题，对数据进行集中管理，单向数据流
+
+Redux遵循的规则
+> 单一数据来源：数据存放在store中
+> 状态只读：只能通过触发action来修改状态
+> 状态可预测：使用纯函数更改状态
+
 store
 > 存储数据
 > 包含方法：dispatch（），getStore（），describe（）
@@ -166,14 +172,23 @@ reducer
 action
 > 数据更新从action出发，通过dispatch派发action，action通知reducer发生了什么事件
 
-Provider和connect
-Provider：提供包含store的context
-connect：连接store和组件
+Provider
+> 提供包含store的context
+connect
+> 连接store和组件
+> 包装原组件：将state,action通过props的方式传入到原组件内部
+> 监听store tree变化：使其包装的原组件可以响应state的变化
+combinReducers
+>合并多个reducer
+mapStateToProps
+>建立一个从（外部的）state对象到（UI 组件的）props对象的映射关系。
+mapDispatchToProps
+>定义了可以派发action的操作
 
-combinReducers：合并多个reducer
 
-mapStateToProps：建立一个从（外部的）state对象到（UI 组件的）props对象的映射关系。
-mapDispatchToProps：定义了可以派发action的操作
+
+
+
 
 # React-Router
 browserHistory和hashHistory
