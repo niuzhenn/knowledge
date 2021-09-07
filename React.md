@@ -97,19 +97,29 @@ virtul DOM 也就是虚拟节点。通过JS的Object对象模拟DOM中的真实�
 虚拟DOM可以看做一棵模拟了DOM树的JavaScript对象树
 
 在传统的 Web 应用中，我们往往会把数据的变化实时地更新到用户界面中，于是每次数据的微小变动都会引起 DOM 树的重新渲染。
-虚拟DOM的目的是将所有操作累加起来，统计计算出所有的变化后，统一更新一次DOM。
+虚拟DOM的目的是将所有操作累加起来，统计计算出所有的变化后，重新构造一棵新的对象树，然后对比新旧虚拟DOM树，记录两棵树差异，统一更新一次DOM。
 
 # diff算法
 React 分别对 tree diff、component diff 以及 element diff 进行算法优化。
+
+1.把树形结构按照层级分解，只比较同级元素。
+2.通过给列表结构的每个单元添加的唯一 key值进行区分同层次的子节点的比较。
+3.React 只会匹配相同 class 的 component（这里面的 class 指的是组件的名字）
+4.合并操作，调用 component 的 setState 方法的时候, React 将其标记为 dirty.
+    到每一个事件循环结束, React 检查所有标记 dirty 的 component 重新绘制。
+5.选择性渲染。开发人员可以重写 shouldComponentUpdate 提高 diff 的性能。
+
 1. tree diff
 > DOM 节点跨层级的移动操作少到可以忽略不计
 > 只对同一层级的节点进行比较，如果节点相同，则更新props，如果不同，则卸载旧节点，加载新节点
+
 2. component diff
 > 如果是同一类型的组件，按照原策略继续比较
 > 如果是不同类型的组件，则直接卸载旧组件，加载新组件
 > 通过shouldComponentUpdate来判断是否需要进行diff
+
 3. element diff
-> 同一层级的节点，diff分为三种操作：插入，删除，删除
+> 同一层级的节点，diff分为三种操作：插入，删除，移动
 > 遍历key，如果key相同，无需删除或插入，如果位置有变更，只移动节点，如果位置没变动，只更新节点
 
 # 循环中添加key的作用是什么
