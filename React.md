@@ -35,6 +35,9 @@ React的生命周期在V16.4以后做了更改，主要是以下的变更
 > 4. UNSAFE_componentWillReceiveProps
 > 5. UNSAFE_componentWillUpdate
 
+# componentWillUnmount有什么作用
+componentWillUnmount会在组件卸载之前调用，在这个生命周期内，可以进行清除定时器，清除监听器，
+
 # 避免react重复渲染
 props或state改变会触发组件重新渲染（栈内存中的值改变，或者堆内存的指针改变）
 1. shouldComponentUpdate
@@ -51,6 +54,32 @@ props或state改变会触发组件重新渲染（栈内存中的值改变，或�
 如何控制同步还是异步？
 
 在setState函数中会根据一个变量isBatchingUpdates来确定是同步还是异步，isBatchingUpdates变量默认是false，表示同步更新，另外有一个batchingUpdates函数，在该函数中会把isBatchingUpdates修改为true，在React调用事件处理函数之前会先调用batchingUpdates，把isBatchingUpdates修改为true，则setState就为异步更新
+
+怎样同步更新？
+通过setTimeout去调用setState，就会是同步更新
+
+怎样在setState之后立刻获得新值？  
+```
+this.setState((prevState, props) => {
+  count: 1,
+}, () => {
+  console.log(this.state.count) // 1
+})
+
+async function() {
+  await this.setState(() => {
+    count: 1,
+  })
+  this.state.count // 1
+}
+
+setTimeout(() => {
+  this.setState(() => {
+    count: 1,
+  })
+  this.state.count // 1
+})
+```
 
 # React组件之间的通信方式
 1. 父子组件的通信  
