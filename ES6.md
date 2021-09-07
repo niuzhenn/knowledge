@@ -84,6 +84,54 @@ js中的任务分为宏任务和微任务
 2. apply: 具有2个参数,第二个参数是array
 3. bind: 只改变this指向,不直接执行函数
 
-# javascript继承的六种方式
+# javascript继承的方式
+```
+function Person(name, age) {
+  this.name = name;
+  this.age = age;
+}
+
+Person.prototype.say = function() {
+  console.log(`I am ${this.name}`);
+}
+```
+1. 原型链继承
+```
+function Man() {}
+Man.prototype = new Person('sam');
+const man = new Man();
+man.say();
+```
+3. 构造继承
+```
+function Man() {
+  Person.apply(this, arugments)
+}
+const man = new Man('sam');
+sam.sau(); // 报错
+```
+5. 组合继承
+```
+function Man() {
+  Person.apply(this, arguments);
+}
+
+Man.prototype = new Person();
+
+```
+7. 原型式继承
+8. 寄生继承
+9. 寄生组合继承
+```
+function Man() {
+  Person.apply(this, arguments);
+}
+
+Man.prototype = Object.create(Person.prototype);
+Man.prototype.construtor = Man;
+const man = new Man('')
+
+```
+11. class继承
 
 # 常用排序方法和性能
