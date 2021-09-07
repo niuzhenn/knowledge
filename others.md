@@ -44,3 +44,25 @@ CORS
 4. 安全
 
 # 刷新页面怎么保持状态
+
+# git
+git init
+git clone
+git pull
+git puush
+git add
+git rm
+git mv
+git status
+git diff
+git commit
+git push
+git reset
+git log
+git blame
+git remote
+git fetch
+git branch
+git merge
+git checkout
+git tag
