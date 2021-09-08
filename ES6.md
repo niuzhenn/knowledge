@@ -5,6 +5,28 @@
 # 柯里化
 是把接受多个参数的函数变换成接受一个单一参数的函数，并且返回接受余下的参数而且返回结果的新函数
 
+柯里化的实现
+```
+function curry (fn, currArgs) {
+    return function() {
+        let args = [].slice.call(arguments);
+
+        // 首次调用时，若未提供最后一个参数currArgs，则不用进行args的拼接
+        if (currArgs !== undefined) {
+            args = args.concat(currArgs);
+        }
+
+        // 递归调用
+        if (args.length < fn.length) {
+            return curry(fn, args);
+        }
+
+        // 递归出口
+        return fn.apply(null, args);
+    }
+}
+```
+
 # 数据类型
 Javascript中的数据类型分为：
 > 1. 基本数据类型：string，number，boolean，null，undefined，symbol，bigint，基本数据类型存在栈内存中
