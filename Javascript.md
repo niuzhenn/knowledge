@@ -1,3 +1,22 @@
+# IE兼容性
+```
+IE8+
+event.addEventListener
+event.removeEventListener
+event.target
+event.preventDefault
+event.stopPropagation
+
+IE8-
+event.attachEvent
+event.dettachEvent
+event.srcElement
+event.returnValue = false
+event.cancelBubble = true
+
+
+```
+
 # 纯函数
 什么是纯函数？
 > 就是一个函数返回的结果只依赖这个函数接收到的参数，并且执行过程不会对外部产生任何影响，即这个函数没有副作用，这个函数就叫做纯函数。  
@@ -31,11 +50,24 @@ function sum(obj, d) {
 ```
 
 # 闭包
+一般情况下，函数执行完毕后，函数内局部变量所占用的内存因为垃圾回收机制就会被释放掉，如果在这个函数内部返回一个访问了局部变量的函数并且执行了，导致函数执行完毕后，局部变量的依然存在引用，导致这个变量不会被回收，这就形成了闭包。  
 闭包是指能访问到另一个函数作用域内的变量的函数
-用处：1. 柯里化； 2. 模块化
+用处：变量持久化，私有化（避免污染全局变量）
 
 # 柯里化
-是把接受多个参数的函数变换成接受一个单一参数的函数，并且返回接受余下的参数而且返回结果的新函数
+是把接受多个参数的函数变换成一系列接受单一参数的函数
+```
+function sum(a) {
+    return function(b) {
+        return a + b;
+    }
+} 
+
+```
+用处
+1. 参数复用
+2. 惰性求值
+3. 动态生成函数
 
 柯里化的实现
 ```
@@ -65,9 +97,9 @@ Javascript中的数据类型分为：
 > 2. 引用数据类型： object，引用数据类型存在堆内存中，变量中存的是堆内存的地址
 
 # 数据类型判断方法
-1. instanceof
-2. typeof
-3. Object.prototype.toString.call()
+1. instanceof: 判断一个对象在其原型链中是否存在某个构造函数
+2. typeof：只能判断基本数据类型，无法判断对象，数组，null（都是object），
+3. Object.prototype.toString.call()：返回[Object Array|Function|String|Number|Undefined|Boolean|BigInt]
 
 # 深拷贝和浅拷贝的区别
 浅拷贝只复制一层对象的属性,深拷贝递归复制对象的所有层级的属性
