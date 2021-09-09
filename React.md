@@ -215,7 +215,7 @@ mapDispatchToProps
 
 ### redux常用中间件
 redux-logger
-redux-saga
+redux-thunk
 
 
 
