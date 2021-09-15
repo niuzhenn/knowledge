@@ -161,6 +161,14 @@ React 分别对 tree diff、component diff 以及 element diff 进行算法优�
 因此，在新版本的React中，将这个过程进行了拆分，分批完成，在一部分完成之后，将控制权交还给浏览器，让浏览器进行渲染，然后在进行下一部分的任务
 
 
+# React性能优化
+React性能优化主要是两个方面：
+1. 减少rerender的次数
+2. 减少组件内计算的量
+> class组件使用shouldComponentUpdate来减少重新渲染次数
+> 函数组件使用React.memo来减少rerender，使用useCallback来缓存函数，使用useMemo来缓存计算结果
+
+
 
 # React-Redux
 React-redux主要解决组件内数据共享问题，对数据进行集中管理，单向数据流
