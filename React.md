@@ -127,18 +127,20 @@ React 分别对 tree diff、component diff 以及 element diff 进行算法优�
 2. 防止非受控组件出现渲染错误
 3. key值需要同层唯一
 
+
 # 类组件和函数式组件
 1. 函数式组件只是返回一个 React Element。我们渲染一个函数式组件时，只是执行了一次函数，得到了一个React Element，并没有产生实例。
 2. 类组件是一个类实例，通过new得来的，只不过我们看不见new的过程而已。当我们渲染类组件时，其实是调用这个类实例的render函数，进而得到一个React Element。
 > 类组件性能消耗比较大，因为需要创建实例，但是存在生命周期，state的特性
 > 函数式组件只是一个函数，执行完返回一个组件，然后上下文销毁，性能消耗比较小，增加了hooks之后就可以拥有类组件的特性
 
+
 # 受控组件和非受控组件
 ### 受控组件
-在HTML中，标签<input>、<textarea>、<select>的值的改变通常是根据用户输入进行更新。在React中，可变状态通常保存在组件的状态属性中，并且只能使用setState()更新，而呈现表单的React组件也控制着在后续用户输入时该表单中发生的情况，以这种由React控制的输入表单元素而改变其值的方式，称为：“受控组件”
+> 在HTML中，标签<input>、<textarea>、<select>的值的改变通常是根据用户输入进行更新。在React中，可变状态通常保存在组件的状态属性中，并且只能使用setState()更新，而呈现表单的React组件也控制着在后续用户输入时该表单中发生的情况，以这种由React控制的输入表单元素而改变其值的方式，称为：“受控组件”
 
 ### 非受控组件  
-表单数据由DOM本身处理。即不受setState()的控制，与传统的HTML表单输入相似，input输入值即显示最新值（使用ref从DOM获取表单值）  
+> 表单数据由DOM本身处理。即不受setState()的控制，与传统的HTML表单输入相似，input输入值即显示最新值（使用ref从DOM获取表单值）  
 
 
 # 高阶组件
@@ -152,6 +154,8 @@ React 分别对 tree diff、component diff 以及 element diff 进行算法优�
 2. 组件功能解耦，把一部分功能抽离到高阶组件内
 3. 需要增加功能，又不想改变原有组件逻辑的时候
 
+  
+  
 # hooks
 1. useState：为函数组件引入状态
 2. useEffect：执行有副作用的代码，第二个参数是一个Array，为函数执行条件，useEffect可以返回一个清除函数，这个函数可以在组件卸载之前运行，也是在每次渲染时清除上一个effect
@@ -174,9 +178,6 @@ React性能优化主要是两个方面：
 2. 减少组件内计算的量
 > class组件使用shouldComponentUpdate来减少重新渲染次数
 > 函数组件使用React.memo来减少rerender，使用useCallback来缓存函数，使用useMemo来缓存计算结果
-
-
-
 
 
 
