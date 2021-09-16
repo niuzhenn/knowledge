@@ -1,3 +1,11 @@
+# es6中的静态方法和静态属性能不能被继承，为什么？
+静态方法
+> 可以被子类继承，不能被实例继承
+
+
+# 怎么理解super
+在子类constructor中，super代表父类的constructor.bind(this)
+
 # IE兼容性
 ```
 IE8+
