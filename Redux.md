@@ -12,3 +12,6 @@ const result : any = useSelector(selector : Function, equalityFn? : Function)
 这个 hook 返回传递给 组件的 Redux sotore 的引用。
 
 # Redux的中间件
+redux-log
+redux-thunk
+redux-actions
