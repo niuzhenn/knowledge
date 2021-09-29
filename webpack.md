@@ -87,13 +87,13 @@ define-plugin
 5. webpack会向外抛出一些hook，插件可以监听这些事件，并执行插件
 
 # devtool的配置项
-eval: eval 会将每一个module模块，执行eval，执行后不会生成sourcemap文件，仅仅是在每一个模块后，增加sourceURL来关联模块处理前后对应的关系
-source-map: source-map会为每一个打包后的模块生成独立的sourcemap文件
-inline: 该属性不会生成独立的 .map文件，而是将 .map文件以dataURL的形式插入
-cheap: 该属性在打包后同样会为每一个文件模块生成 .map文件，但是与source-map的区别在于cheap生成的 map文件会忽略原始代码中的列信息
-module: 该属性的配置也是生成一个没有列的信息的sourceMaps文件，同时loader的sourcemap也被简化成为只包含对应行的
-hidden:
-nosource:
+1. eval: eval 会将每一个module模块，执行eval，执行后不会生成sourcemap文件，仅仅是在每一个模块后，增加sourceURL来关联模块处理前后对应的关系
+2. source-map: source-map会为每一个打包后的模块生成独立的sourcemap文件
+3. inline: 该属性不会生成独立的 .map文件，而是将 .map文件以dataURL的形式插入
+4. cheap: 该属性在打包后同样会为每一个文件模块生成 .map文件，但是与source-map的区别在于cheap生成的 map文件会忽略原始代码中的列信息
+5. module: 该属性的配置也是生成一个没有列的信息的sourceMaps文件，同时loader的sourcemap也被简化成为只包含对应行的
+6. hidden:
+7. nosource:
 
 
 # hash, fullhash, contenthash
