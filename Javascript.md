@@ -245,3 +245,34 @@ const women = new Man('lily');
 11. class继承
 
 # 常用排序方法和性能
+
+
+# Array常用方法
+at()
+shift()：从数组中删除第一个元素，并返回该元素的值
+unshift()
+slice()：提取源数组的一部分并返回一个新数组
+splice()：通过删除或替换现有元素或者原地添加新的元素来修改数组,并以数组形式返回被修改的内容
+push()：将一个或多个元素添加到数组的末尾，并返回该数组的新长度
+pop()：从数组中删除最后一个元素，并返回该元素的值
+map()：返回一个新数组
+forEach()：如果对数组元素进行操作，会改变原数组
+filter()
+some()
+every()
+concat()：返回一个新数组，不会改变原有数组
+find()
+findIndex()
+reverse()：将数组中元素的位置颠倒，并返回该数组。该方法会改变原数组
+sort()
+copyWithin()
+entries()
+keys()
+values()
+fill()
+flat()：返回一个新数组
+includes()
+indexOf()
+lastIndexOf()
+join()
+reduce()
