@@ -98,3 +98,10 @@ id选择器：0100
 #demo tag {
 }
 ```
+
+## position
+1. static: 元素在文档流中的当前位置不变
+2. fixed：元素相对于屏幕定位，不给元素预留位置
+3. relative： 给元素预留位置，元素相对于自身进行偏移，偏移后在原位置会留下空白
+4. absolute：不给元素预留位置，相对于最近的position的值为fixed,relative,absolute,sticky的祖先元素定位
+5. sticky：
